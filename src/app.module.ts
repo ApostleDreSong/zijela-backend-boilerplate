@@ -40,7 +40,10 @@ const appConfig = config.get('app');
       useFactory: () => throttleConfig
     }),
     TypeOrmModule.forRootAsync({
-      useFactory: () => ormConfig
+      useFactory: () => ({
+        ...ormConfig
+        // logging: 'all'
+      })
     }),
     I18nModule.forRootAsync({
       useFactory: () => ({

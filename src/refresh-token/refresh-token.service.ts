@@ -243,8 +243,8 @@ export class RefreshTokenService {
     return this.repository
       .createQueryBuilder('token')
       .select(`token.${field} AS type`)
+      .addSelect('CAST(COUNT(*) AS SIGNED) AS value')
       .where(`token.${field} IS NOT NULL`)
-      .addSelect('COUNT(*)::int AS value')
       .groupBy(`token.${field}`)
       .getRawMany();
   }

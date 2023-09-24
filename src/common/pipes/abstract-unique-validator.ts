@@ -14,6 +14,11 @@ export interface UniqueValidationArguments<E> extends ValidationArguments {
   ];
 }
 
+interface CustomUniqueValidationArguments<E>
+  extends UniqueValidationArguments<E> {
+  property: string;
+}
+
 /**
  * abstract class to validate unique
  */
@@ -27,7 +32,11 @@ export abstract class AbstractUniqueValidator
    * @param value
    * @param args
    */
-  public async validate<E>(value: string, args: UniqueValidationArguments<E>) {
+
+  public async validate<E>(
+    value: string,
+    args: CustomUniqueValidationArguments<E>
+  ) {
     const [EntityClass, findCondition = args.property] = args.constraints;
     return (
       (await this.connection.getRepository(EntityClass).count({

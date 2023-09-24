@@ -12,6 +12,8 @@ import * as cookieParser from 'cookie-parser';
 import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
 
 import { AppModule } from 'src/app.module';
+import { ConfigModule } from '@nestjs/config';
+ConfigModule.forRoot();
 
 async function bootstrap() {
   const serverConfig = config.get('server');
@@ -66,7 +68,7 @@ async function bootstrap() {
 
   app.use(cookieParser());
   await app.listen(port);
-  console.log(`Application listening in port: ${port}`);
+  console.log(`Application listening on port: ${port}`);
 }
 
 bootstrap();

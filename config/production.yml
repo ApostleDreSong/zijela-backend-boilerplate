@@ -1,13 +1,15 @@
 server:
-  port: 7777
+  port: 8000
   origin: 'http://localhost:3000'
 
 db:
-  host: ''
-  type: ''
-  port: 5432
-  database: 'truthy'
+  host: 'localhost'
+  type: 'mysql'
+  port: 3306
+  username: 'root'
+  password: 'Rise@2023'
   synchronize: false
+  database: 'early_career'
 
 jwt:
   expiresIn: 900

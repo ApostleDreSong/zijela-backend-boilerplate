@@ -1,10 +1,11 @@
 db:
   host: 'localhost'
-  type: 'postgres'
-  port: 5432
-  username: 'postgres'
-  password: 'root'
+  type: 'mysql'
+  port: 3306
+  username: 'root'
+  password: 'Rise@2023'
   synchronize: false
+  database: 'early_career'
 
 jwt:
-  secret: 'example@123'
+  secret: 'iamasecret'

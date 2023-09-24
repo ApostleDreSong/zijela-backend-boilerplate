@@ -80,7 +80,7 @@ export class AppFactory {
 
   static async dropTables() {
     const connection = await createConnection({
-      type: dbConfig.type || 'postgres',
+      type: (process.env.DB_TYPE as any) || 'mysql',
       host: process.env.DB_HOST || dbConfig.host,
       port: parseInt(process.env.DB_PORT) || dbConfig.port,
       database: process.env.DB_DATABASE_NAME || dbConfig.database,

@@ -1,14 +1,15 @@
 server:
-  port: 7777
+  port: 8000
   origin: 'http://localhost:3000'
 
 db:
   host: 'localhost'
-  type: 'postgres'
-  port: 5432
-  username: 'postgres'
-  password: 'root'
+  type: 'mysql'
+  port: 3306
+  username: 'root'
+  password: 'Rise@2023'
   synchronize: false
+  database: 'early_career'
 
 jwt:
   # expiresIn: 10
@@ -21,7 +22,7 @@ app:
   name: 'Truthy'
   version: 'v0.1'
   description: 'Official Truthy API'
-  appUrl: 'http://localhost:7777'
+  appUrl: 'http://localhost:8000'
   frontendUrl: 'http://localhost:3000'
   sameSite: true
 
